@@ -1,19 +1,19 @@
+import java.util.concurrent.ThreadLocalRandom;
 public class While {
     public static void main(String[] args) {
-        
-        String clientes [] = {"01", "02","03","04","05"};
+	double mesada = 50.0;
 
-        for (String cliente : clientes) {
-            System.out.println("O cliente " + cliente + " está sendo solicitado na sala 2");
+        while(mesada > 0) {
+            Double valorDoce = valorAleatorio();
+
+            System.out.println("Doce do valor: " + valorDoce + " Adicionado no carrinho");
+            mesada = mesada - valorDoce;
         }
-        /* 
-        do {
-            System.out.println("O cliente " + clientes + " pode prosseguir");
-            
-        } while(clientes == "05")
-        System.out.println("O médico não poderá mais atendê-lo");
-
-        break;*/
-
+        System.out.println("Mesada:" + mesada);
+        System.out.println("Joãozinho gastou toda a sua mesada em doces");
+        
+    } //Método para originar valores aleatório para o algoritmo
+    private static double valorAleatorio() {
+     return ThreadLocalRandom.current().nextDouble(2, 15);
     }
 }
